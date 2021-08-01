@@ -6,6 +6,8 @@ export const NavWrapper = styled.nav`
   background: ${(props) => props.theme.color.wheat};
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
 `
 
 export const Nav = styled.nav`
@@ -42,6 +44,7 @@ export const NavbarButton = styled.button`
     top: 50%;
     transform: translateY(-50%);
   }
+  ${props=>props.property}
 `
 
 export const NavbarIcon = styled.a`
