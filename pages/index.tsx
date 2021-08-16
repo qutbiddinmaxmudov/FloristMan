@@ -1,6 +1,9 @@
+import React from 'react'
+import Link from 'next/link'
 import Button from '../components/Button'
 import Intro from '../components/Intro'
 import styled from 'styled-components'
+import DiscountProducts from '../components/DiscountProducts'
 
 const IntroSubtitle = styled.p`
   font-size: 24px;
@@ -29,10 +32,13 @@ const IntroTitle = styled.h1`
 
 export default function Home() {
   return (
-    <Intro>
-      <IntroSubtitle>Подарите ощущение праздника</IntroSubtitle>
-      <IntroTitle>Собираем букеты, созданные для Вас</IntroTitle>
-      <Button>Выбрать букет</Button>
-    </Intro>
+    <>
+      <Intro>
+        <IntroSubtitle>Подарите ощущение праздника</IntroSubtitle>
+        <IntroTitle>Собираем букеты, созданные для Вас</IntroTitle>
+          <Button href="/catalog">Выбрать букет</Button>
+      </Intro>
+      <DiscountProducts />
+    </>
   )
 }

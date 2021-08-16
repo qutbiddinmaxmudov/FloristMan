@@ -6,14 +6,14 @@ const NavbarMenu = styled.ul`
   display: flex;
   flex-direction: column;
   position: fixed;
-  height: auto;
-  max-height: calc(100vh - 75px);
+  height: calc(100vh - 75px);
   top: 75px;
   background: rgba(196, 196, 196, 0.3);
-  backdrop-filter: blur(2px);
   list-style: none;
   left: 0;
   transition: 0.5s transform;
+  backdrop-filter: blur(5px);
+  z-index: 5;
 `
 
 interface NavbarPanelInterface {
@@ -22,7 +22,7 @@ interface NavbarPanelInterface {
 
 const NavbarPanel: React.FC<NavbarPanelInterface> = ({ hidden }) => {
   return (
-    <NavbarMenu style={{ transform: `translateX(${hidden?'-100%':'0'})` }}>
+    <NavbarMenu style={{ transform: `translateX(${hidden ? '-100%' : '0'})` }}>
       <NavbarMenuItem url="gift">Цветы</NavbarMenuItem>
       <NavbarMenuItem items={[{ name: 'Рафаэлло', url: 'raffaello' }]}>Сладости</NavbarMenuItem>
       <NavbarMenuItem url="sweets">Сладости</NavbarMenuItem>

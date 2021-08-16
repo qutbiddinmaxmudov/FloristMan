@@ -1,8 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
-import styled from 'styled-components'
+import styled, { CSSProperties } from 'styled-components'
 
 interface ButtonInterface {
   disabled?: boolean
+  href?: string
+  style?: CSSProperties
 }
 
 const StyledButton = styled.button`
@@ -16,16 +19,27 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  &:hover{
-    background: #FD4F79;
+  text-decoration: none;
+  &:hover {
+    background: #fd4f79;
   }
-  &:disabled{
-    background: #D7537A;
+  &:disabled {
+    background: #d7537a;
   }
 `
 
-const Button: React.FC<ButtonInterface> = (props) => {
-  return <StyledButton {...props.disabled}>{props.children}</StyledButton>
+const Button: React.FC<ButtonInterface> = ({ style, disabled, children, href }) => {
+  return href ? (
+    <Link href={href} passHref>
+      <StyledButton style={style} as="a">
+        {children}
+      </StyledButton>
+    </Link>
+  ) : (
+    <StyledButton style={style} {...disabled}>
+      {children}
+    </StyledButton>
+  )
 }
 
 export default Button

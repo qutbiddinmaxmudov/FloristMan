@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -14,9 +13,11 @@ function Navbar() {
   const [navbarHidden, setNavbarHidden] = useState(true)
 
   useEffect(() => {
-    window.addEventListener('click',(event)=>{
-      const navbar = document.querySelector('#navbar');
-      if(!event.composedPath().includes(navbar)) setNavbarHidden(true)
+    window.addEventListener('click', (event) => {
+      const navbar = document.querySelector('#navbar')
+      if (navbar) {
+        if (!event.composedPath().includes(navbar)) setNavbarHidden(true)
+      }
     })
   }, [])
 
@@ -25,7 +26,7 @@ function Navbar() {
     <NavWrapper id="navbar">
       <Container>
         <Nav>
-          <NavbarButton onClick={handleNavbarButtonClick} className={`${navbarHidden ? 'hidden' : ''}`}>
+          <NavbarButton onClick={handleNavbarButtonClick} className={`${!navbarHidden ? 'hidden' : ''}`}>
             <span></span>
           </NavbarButton>
           <Logo />

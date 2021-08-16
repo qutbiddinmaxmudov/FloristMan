@@ -8,6 +8,7 @@ export const NavWrapper = styled.nav`
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 5;
 `
 
 export const Nav = styled.nav`
@@ -33,16 +34,33 @@ export const NavbarButton = styled.button`
     height: 2px;
     background: black;
     left: 0;
+    transition: 0.5s;
   }
   &::before {
     top: 0;
   }
   &::after {
-    bottom: 0;
+    top: 100%;
+    transform: translateY(-100%);
   }
   span {
     top: 50%;
     transform: translateY(-50%);
+  }
+  &.hidden{
+    span, &::before,&::after{
+      top: 50%;
+      transform: -50%;
+    }
+    &::before{
+      transform: rotate(225deg);
+    }
+    &::after{
+      transform: rotate(-225deg);
+    }
+    span{
+      transform: rotate(225deg);
+    }
   }
   ${props=>props.property}
 `
