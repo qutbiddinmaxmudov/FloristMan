@@ -76,8 +76,8 @@ const MenuSublist = styled.ul`
 `
 
 const NavbarMenuItem: React.FC<NavbarMenuItemInterface> = ({ children, url, items }) => {
+  const [sublistState, setSublistState] = useState(false)
   if (items) {
-    const [sublistState, setSublistState] = useState(false)
     const handleSublistClick = () => setSublistState(!sublistState)
     return (
       <li>

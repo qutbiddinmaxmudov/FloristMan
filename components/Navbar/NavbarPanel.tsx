@@ -12,7 +12,7 @@ const NavbarMenu = styled.ul`
   list-style: none;
   left: 0;
   transition: 0.5s transform;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
   z-index: 5;
 `
 
