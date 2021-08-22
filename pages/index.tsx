@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import Intro from '../components/Intro'
 import styled from 'styled-components'
 import DiscountProducts from '../components/DiscountProducts'
+import WhyWe from '../components/WhyWe'
 
 const IntroSubtitle = styled.p`
   font-size: 24px;
@@ -36,9 +37,10 @@ export default function Home() {
       <Intro>
         <IntroSubtitle>Подарите ощущение праздника</IntroSubtitle>
         <IntroTitle>Собираем букеты, созданные для Вас</IntroTitle>
-          <Button href="/catalog">Выбрать букет</Button>
+        <Button href="/catalog">Выбрать букет</Button>
       </Intro>
       <DiscountProducts />
+      <WhyWe />
     </>
   )
 }
