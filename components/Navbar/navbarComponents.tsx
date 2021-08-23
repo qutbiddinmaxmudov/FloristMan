@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const NavWrapper = styled.nav`
-  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
   height: 75px;
   width: 100%;
   background: ${(props) => props.theme.color.wheat};
   display: flex;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 5;
 `
@@ -48,22 +48,24 @@ export const NavbarButton = styled.button`
     top: 50%;
     transform: translateY(-50%);
   }
-  &.hidden{
-    span, &::before,&::after{
+  &.hidden {
+    span,
+    &::before,
+    &::after {
       top: 50%;
       transform: -50%;
     }
-    &::before{
+    &::before {
       transform: rotate(225deg);
     }
-    &::after{
+    &::after {
       transform: rotate(-225deg);
     }
-    span{
+    span {
       transform: rotate(225deg);
     }
   }
-  ${props=>props.property}
+  ${(props) => props.property}
 `
 
 export const NavbarIcon = styled.a`

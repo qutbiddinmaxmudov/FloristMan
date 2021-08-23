@@ -15,6 +15,7 @@ import sweets from '../images/Сладости.png'
 
 const CatalogWrapper = styled.section`
   position: relative;
+  margin-bottom: 50px;
 `
 
 const Title = styled.h2`
