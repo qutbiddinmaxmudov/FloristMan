@@ -7,6 +7,8 @@ import DiscountProducts from '../components/DiscountProducts'
 import WhyWe from '../components/WhyWe'
 import GridCatalog from '../components/GridCatalog'
 import ForYou from '../components/ForYou'
+import Delivery from '../components/Delivery'
+import Suggest from '../components/Suggest'
 
 const IntroSubtitle = styled.p`
   font-size: 24px;
@@ -45,6 +47,8 @@ export default function Home() {
       <WhyWe />
       <GridCatalog />
       <ForYou />
+      <Delivery />
+      <Suggest/>
     </>
   )
 }
