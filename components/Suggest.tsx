@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Button from './Button'
 import Container from './Container'
 import suggestImage from '../images/Suggest Image.png'
+import telegramServices from '../services/telegram'
 
 const Wrapper = styled.section`
   padding-bottom: 80px;
@@ -17,7 +18,6 @@ const Title = styled.h2`
 
 const Content = styled.div`
   display: flex;
-  align-items: center;
 `
 const Form = styled.form`
   display: flex;
@@ -34,11 +34,16 @@ const FormInput = styled.input`
   border: none;
   outline: none;
   font-family: ${(props) => props.theme.lato};
+  transition: 0.5s box-shadow;
   &::placeholder {
     font-weight: normal;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.54);
     font-family: ${(props) => props.theme.lato};
+  }
+
+  &.invalid {
+    box-shadow: 0 0 5px red;
   }
 `
 const IdeaInput = styled(FormInput)`
@@ -69,18 +74,46 @@ const SuggestImage = styled.div`
 `
 
 const Suggest = () => {
-  const [name, setName] = useState('')
-  const [phone, setPhone] = useState('')
-
-  const handleNameInput = (e: FormEvent<HTMLInputElement>) => {
-    const isValid = e.currentTarget.value.match(/[,./*-+/\\\[\]{}=()<>?;:]/)
+  const [name, setName] = useState({
+    text: '',
+    valid: false,
+  })
+  const [phone, setPhone] = useState({
+    text: '+998',
+    valid: false,
+  })
+  const [idea, setIdea] = useState('')
+  const handleNameInput = ({ currentTarget: input }: FormEvent<HTMLInputElement>) => {
+    const isValid = input.value.match(/[,./*-+/\\\[\]{}=()<>?;:]/)
     if (isValid) return
-    setName(e.currentTarget.value)
+    setName({
+      text: input.value,
+      valid: input.value.length > 2,
+    })
   }
-  const handlePhoneInput = (e: FormEvent<HTMLInputElement>) => {
-    const isValid = e.currentTarget.value.match(/\D/)
+
+  const handlePhoneInput = ({ currentTarget: input }: FormEvent<HTMLInputElement>) => {
+    const isValid = input.value.match(/\+99\d+$/)
+    if (!isValid || input.value.length > 13) return
+    setPhone({
+      text: input.value,
+      valid: input.value.length === 13,
+    })
+  }
+
+  const handleIdeaInput = ({ currentTarget: textarea }: FormEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    const isValid = textarea.value.match(/[<>]/)
     if (isValid) return
-    setName(e.currentTarget.value)
+    setIdea(textarea.value)
+  }
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    telegramServices.sendMessage({
+      name: name.text,
+      phone: phone.text,
+      idea,
+    })
   }
 
   return (
@@ -88,10 +121,20 @@ const Suggest = () => {
       <Container>
         <Title>Предложи свой букет</Title>
         <Content>
-          <Form>
-            <FormInput onInput={handleNameInput} placeholder="Имя" value={name} />
-            <FormInput onInput={handlePhoneInput} placeholder="Телефон" value={phone} />
-            <IdeaInput placeholder="Ваша идея" as="textarea" />
+          <Form onSubmit={handleFormSubmit}>
+            <FormInput
+              className={name.valid ? '' : 'invalid'}
+              onInput={handleNameInput}
+              placeholder="Имя"
+              value={name.text}
+            />
+            <FormInput
+              className={phone.valid ? '' : 'invalid'}
+              onInput={handlePhoneInput}
+              placeholder="Телефон"
+              value={phone.text}
+            />
+            <IdeaInput onInput={handleIdeaInput} placeholder="Ваша идея" as="textarea" value={idea} />
             <Button style={{ height: 75, width: 275, marginTop: 50, marginLeft: 'auto', marginRight: 40 }}>
               Отправить
             </Button>
