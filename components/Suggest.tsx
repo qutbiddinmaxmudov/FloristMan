@@ -107,13 +107,23 @@ const Suggest = () => {
     setIdea(textarea.value)
   }
 
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    telegramServices.sendMessage({
-      name: name.text,
-      phone: phone.text,
-      idea,
-    })
+    if (!phone.valid || !name.valid) {
+      window.alert('Заполните поля пожалуйта!')
+    } else {
+      const data = await telegramServices.sendMessage({
+        name: name.text,
+        phone: phone.text,
+        idea,
+      })
+      if (data.ok) {
+        alert('Ваше сообщение доставлено спасибо.')
+      } else {
+        alert('Что-то пошло не так. Попробуйте еще раз пожалуйста.')
+      }
+      console.log(data)
+    }
   }
 
   return (

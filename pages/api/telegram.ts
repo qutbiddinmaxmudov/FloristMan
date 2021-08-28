@@ -1,25 +1,22 @@
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { telegramSendMessageProps } from '../../services/telegram'
+import { TelegramSendMessageProps } from '../../services/telegram'
+import { TelegramSendMessageResponseInterface } from '../../types/telegram'
 
 interface SendMessageInterface {
   ok: boolean
 }
 
-interface resMessage {
-  text: string
-}
-
 const telegramAPI = async (req: NextApiRequest, res: NextApiResponse<SendMessageInterface>) => {
   if (req.method === 'POST') {
-    const body: telegramSendMessageProps = req.body
+    const body: TelegramSendMessageProps = req.body
     const message = `
 <b>Предложение с сайта!</b>
 <b>Имя</b>: ${body.name}
 <b>Телефон</b>: <a href="tel:${body.phone}"><u>${body.phone}</u></a>
 <b>Идея</b>: ${body.idea}`
 
-    const { data } = await axios.post<resMessage>(
+    const { data } = await axios.post<TelegramSendMessageResponseInterface>(
       `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
       {
         chat_id: process.env.TELEGRAM_GROUP_CHAT_ID,
@@ -27,8 +24,11 @@ const telegramAPI = async (req: NextApiRequest, res: NextApiResponse<SendMessage
         parse_mode: 'HTML',
       }
     )
-
-    console.log(data.text)
+    if (data.ok) {
+      res.status(200)
+    } else {
+      res.status(503)
+    }
   }
 }
 
