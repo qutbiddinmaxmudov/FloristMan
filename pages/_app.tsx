@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import { defaultTheme, GlobalStyles } from '../styles/theme'
 import '../styles/fonts/font.css'
 import Head from 'next/head'
+import { reduxWrapper } from '../store/store'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,4 +20,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   )
 }
-export default MyApp
+export default reduxWrapper.withRedux(MyApp)
