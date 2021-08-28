@@ -25,9 +25,9 @@ const telegramAPI = async (req: NextApiRequest, res: NextApiResponse<SendMessage
       }
     )
     if (data.ok) {
-      res.status(200)
+      res.status(200).json({ ok: data.ok })
     } else {
-      res.status(503)
+      res.status(503).json({ ok: data.ok })
     }
   }
 }

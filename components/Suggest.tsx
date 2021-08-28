@@ -5,6 +5,7 @@ import Button from './Button'
 import Container from './Container'
 import suggestImage from '../images/Suggest Image.png'
 import telegramServices from '../services/telegram'
+import { ApiTelegramResponse } from '../types/telegram'
 
 const Wrapper = styled.section`
   padding-bottom: 80px;
@@ -112,7 +113,7 @@ const Suggest = () => {
     if (!phone.valid || !name.valid) {
       window.alert('Заполните поля пожалуйта!')
     } else {
-      const data = await telegramServices.sendMessage({
+      const data: ApiTelegramResponse = await telegramServices.sendMessage({
         name: name.text,
         phone: phone.text,
         idea,
