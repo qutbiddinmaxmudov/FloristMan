@@ -9,6 +9,7 @@ import GridCatalog from '../components/GridCatalog'
 import ForYou from '../components/ForYou'
 import Delivery from '../components/Delivery'
 import Suggest from '../components/Suggest'
+import Footer from '../components/Footer'
 
 const IntroSubtitle = styled.p`
   font-size: 24px;
@@ -48,7 +49,8 @@ export default function Home() {
       <GridCatalog />
       <ForYou />
       <Delivery />
-      <Suggest/>
+      <Suggest />
+      <Footer />
     </>
   )
 }

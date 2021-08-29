@@ -1,7 +1,6 @@
 import { rootReducer } from './rootReducer'
 import createSagaMiddleware from 'redux-saga'
 import { configureStore } from '@reduxjs/toolkit'
-import { createWrapper } from 'next-redux-wrapper'
 
 const USE_DEV_TOOLS = process.env.NODE_ENV !== 'production'
 
@@ -16,4 +15,4 @@ const createStore = () => {
   return store
 }
 
-export const reduxWrapper = createWrapper(createStore)
+export default createStore()

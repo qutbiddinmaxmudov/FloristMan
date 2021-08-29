@@ -4,21 +4,23 @@ import React, { useEffect, useState } from 'react'
 import Container from '../Container'
 import Logo from '../Logo'
 import { Nav, NavbarButton, NavbarIcon, NavWrapper } from './navbarComponents'
-import user from '../../images/user.svg'
-import search from '../../images/search.svg'
-import cart from '../../images/cart.svg'
+import user from '../../images/icons/user.svg'
+import search from '../../images/icons/search.svg'
+import cart from '../../images/icons/cart.svg'
 import NavbarPanel from './NavbarPanel'
 
 function Navbar() {
   const [navbarHidden, setNavbarHidden] = useState(true)
 
   useEffect(() => {
-    window.addEventListener('click', (event) => {
+    const effect = (event: MouseEvent) => {
       const navbar = document.querySelector('#navbar')
       if (navbar) {
         if (!event.composedPath().includes(navbar)) setNavbarHidden(true)
       }
-    })
+    }
+    window.addEventListener('click', effect)
+    return () => window.removeEventListener('click', effect)
   }, [])
 
   const handleNavbarButtonClick = () => setNavbarHidden(!navbarHidden)

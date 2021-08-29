@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import React, { FormEvent, useState } from 'react'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 import Button from './Button'
 import Container from './Container'
 import suggestImage from '../images/Suggest Image.png'
 import telegramServices from '../services/telegram'
 import { ApiTelegramResponse } from '../types/telegram'
+import { showMessage } from '../store/ducks/modal'
 
 const Wrapper = styled.section`
   padding-bottom: 80px;
@@ -75,6 +77,7 @@ const SuggestImage = styled.div`
 `
 
 const Suggest = () => {
+  const dispatch = useDispatch()
   const [name, setName] = useState({
     text: '',
     valid: false,
@@ -111,19 +114,15 @@ const Suggest = () => {
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!phone.valid || !name.valid) {
-      window.alert('Заполните поля пожалуйта!')
+      dispatch(showMessage('Заполните поля пожалуйта!'))
     } else {
       const data: ApiTelegramResponse = await telegramServices.sendMessage({
         name: name.text,
         phone: phone.text,
         idea,
       })
-      if (data.ok) {
-        alert('Ваше сообщение доставлено спасибо.')
-      } else {
-        alert('Что-то пошло не так. Попробуйте еще раз пожалуйста.')
-      }
-      console.log(data)
+      if (data.ok) dispatch(showMessage('Ваше сообщение доставлено спасибо.'))
+      else dispatch(showMessage('Что-то пошло не так. Попробуйте еще раз пожалуйста.'))
     }
   }
 

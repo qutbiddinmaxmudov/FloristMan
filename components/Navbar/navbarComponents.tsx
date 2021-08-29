@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const NavWrapper = styled.nav`
+export const NavWrapper = styled.header`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
   height: 75px;
   width: 100%;

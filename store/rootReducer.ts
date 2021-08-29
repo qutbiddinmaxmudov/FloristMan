@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import { modalReducer } from './ducks/modal/reducer'
+import modal from './ducks/modal'
 
 export const rootReducer = combineReducers({
-  modal: modalReducer,
+  modal,
 })
