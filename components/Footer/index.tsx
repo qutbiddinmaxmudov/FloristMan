@@ -1,81 +1,36 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import styled from 'styled-components'
-import Container from './Container'
-import Logo from './Logo'
-import PatternBlock from './PatternBlock'
+import Container from '../Container'
+import Logo from '../Logo'
+import PatternBlock from '../PatternBlock'
+import {
+  Wrapper,
+  LogoBlock,
+  FooterNavigation,
+  Card,
+  FooterTitle,
+  FooterInfo,
+  FooterSocial,
+  FooterLastWord,
+} from './styles'
 
-import assoseries from '../images/footer/assoseries.png'
-import boubles from '../images/footer/boubles.png'
-import flowers from '../images/footer/flowers.png'
-import fruitSweets from '../images/footer/fruit sweets.png'
-import presents from '../images/footer/presents.png'
-import roomFlowers from '../images/footer/room flowers.png'
-import services from '../images/footer/services.png'
-import sweets from '../images/footer/sweets.png'
+import assoseries from '../../images/footer/assoseries.png'
+import boubles from '../../images/footer/boubles.png'
+import flowers from '../../images/footer/flowers.png'
+import fruitSweets from '../../images/footer/fruit sweets.png'
+import presents from '../../images/footer/presents.png'
+import roomFlowers from '../../images/footer/room flowers.png'
+import services from '../../images/footer/services.png'
+import sweets from '../../images/footer/sweets.png'
 
-import instagram from '../images/icons/instagram.svg'
-import facebook from '../images/icons/facebook.svg'
-import whatsapp from '../images/icons/whatsapp.svg'
-import viber from '../images/icons/viber.svg'
+import instagram from '../../images/icons/instagram.svg'
+import facebook from '../../images/icons/facebook.svg'
+import whatsapp from '../../images/icons/whatsapp.svg'
+import viber from '../../images/icons/viber.svg'
 
-import phone from '../images/icons/phone.svg'
-import email from '../images/icons/email.svg'
-
-const Wrapper = styled.footer`
-  box-shadow: -2px 0 3px ${(props) => props.theme.color.white};
-  background: ${(props) => props.theme.color.white};
-  padding-bottom: 50px;
-`
-const LogoBlock = styled.div`
-  margin: auto;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-`
-const FooterNavigation = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`
-const Card = styled.a`
-  position: relative;
-  flex-basis: calc(100% / 4 - 12px);
-  color: ${(props) => props.theme.color.black};
-  height: 360px;
-  overflow: hidden;
-  margin-bottom: 24px;
-`
-
-const FooterTitle = styled.h3`
-  margin-bottom: 36px;
-  text-align: center;
-`
-const FooterInfo = styled.a`
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: ${(props) => props.theme.color.black};
-  font-weight: 600;
-  font-size: 18px;
-`
-const FooterSocial = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-`
-
-const FooterLastWord = styled.p`
-  font-size: 24px;
-  text-align: center;
-`
+import phone from '../../images/icons/phone.svg'
+import email from '../../images/icons/email.svg'
 
 const Footer = () => {
   return (

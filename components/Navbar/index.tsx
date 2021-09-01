@@ -43,7 +43,7 @@ function Navbar() {
                 <Image src={cart} alt="Cart icon"></Image>
               </NavbarIcon>
             </Link>
-            <Link href="/user" passHref>
+            <Link href="/auth/login" passHref>
               <NavbarIcon>
                 <Image src={user} alt="User icon"></Image>
               </NavbarIcon>

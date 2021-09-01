@@ -1,6 +1,6 @@
 import React from 'react'
 
-function cart() {
+function Cart() {
   return (
     <div>
       Cart
@@ -8,4 +8,4 @@ function cart() {
   )
 }
 
-export default cart
+export default Cart

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function catalog() {
+function Catalog() {
   return (
     <div>
       Catalog
@@ -8,4 +8,4 @@ function catalog() {
   )
 }
 
-export default catalog
+export default Catalog

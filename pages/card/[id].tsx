@@ -1,6 +1,6 @@
 import React from 'react'
 
-function card() {
+function Card() {
   return (
     <div>
       Card
@@ -8,4 +8,4 @@ function card() {
   )
 }
 
-export default card
+export default Card
