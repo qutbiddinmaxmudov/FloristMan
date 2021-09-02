@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Button from '../../components/Button'
 import Intro from '../../components/Intro'
-import { Form, Title, Subtitle, StyledLink, Input, PasswordInput, ShowPassword, buttonStyles } from './styledComponents'
+import { Form, Title, Subtitle, StyledLink, Input, PasswordInput, ShowPassword, buttonStyles } from '../../styles/authStyledComponents'
 import invisibleIcon from '../../images/icons/invisible.svg'
 import visibleIcon from '../../images/icons/visible.svg'
 function Login() {
@@ -22,7 +22,7 @@ function Login() {
         </Subtitle>
         <Input placeholder="Телефон" />
         <PasswordInput>
-          <Input type={visible ? 'text' : 'password'} placeholder="Пароль" />
+          <Input style={{marginBottom:0}} type={visible ? 'text' : 'password'} placeholder="Пароль" />
           <ShowPassword type="button" onClick={changeVisible}>
             <Image src={visible ? visibleIcon : invisibleIcon} alt="Eye button" />
           </ShowPassword>

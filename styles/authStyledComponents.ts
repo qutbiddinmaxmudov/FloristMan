@@ -57,6 +57,9 @@ export const ShowPassword = styled.button`
   height: 25px;
   margin-left: 20px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const buttonStyles: CSSProperties = {
