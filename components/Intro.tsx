@@ -14,12 +14,10 @@ const Wrapper = styled.section<IntroProps>`
   padding-top: ${(props) => (props.pt ? props.pt : '300px')};
 `
 
-const Intro: React.FC<IntroProps> = ({ children, fullscreen, pt }) => {
-  return (
-    <Wrapper fullscreen={fullscreen} pt={pt}>
-      <Container>{children}</Container>
-    </Wrapper>
-  )
-}
+const Intro: React.FC<IntroProps> = ({ children, fullscreen, pt }) => (
+  <Wrapper fullscreen={fullscreen} pt={pt}>
+    <Container>{children}</Container>
+  </Wrapper>
+)
 
 export default Intro

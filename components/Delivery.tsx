@@ -22,18 +22,16 @@ const DeliveryText = styled.p`
   line-height: 44px;
 `
 
-const Delivery = () => {
-  return (
-    <Wrapper>
-      <Container>
-        <Title>Доставка</Title>
-        <DeliveryText>
-          Возьмём на себя все заботы по созданию, оформлению и доставке корпоративных букетов в обычные и праздничные
-          дни за разумные деньги
-        </DeliveryText>
-      </Container>
-    </Wrapper>
-  )
-}
+const Delivery = () => (
+  <Wrapper>
+    <Container>
+      <Title>Доставка</Title>
+      <DeliveryText>
+        Возьмём на себя все заботы по созданию, оформлению и доставке корпоративных букетов в обычные и праздничные дни
+        за разумные деньги
+      </DeliveryText>
+    </Container>
+  </Wrapper>
+)
 
 export default Delivery

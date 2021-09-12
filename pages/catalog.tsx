@@ -1,11 +1,7 @@
 import React from 'react'
 
-function Catalog() {
-  return (
-    <div>
-      Catalog
-    </div>
-  )
-}
+interface Props {}
+
+const Catalog = ({}: Props) => <div>Catalog</div>
 
 export default Catalog

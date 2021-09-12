@@ -1,4 +1,4 @@
-import { ModalReducerInterface } from "./ducks/modal";
+import { ModalReducerInterface } from './ducks/modal'
 
 export interface RootReducerInterface {
   modal: ModalReducerInterface

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
@@ -113,33 +112,30 @@ const ProductCard: React.FC<ProductCardInterface> = ({
   newProduct,
   discount,
   name,
-  id,
   price,
   oldPrice,
-}) => {
-  return (
-    <Card>
-      <CardImageBlock>
-        <CardImage src={img} />
-        {(hit || newProduct || bouquetOfDay) && (
-          <CardStocks>
-            {hit && <CardStock style={{ background: '#FD4F79' }}>ХИТ ПРОДАЖ</CardStock>}
-            {newProduct && <CardStock style={{ background: '#4AE950' }}>НОВИНКА</CardStock>}
-            {bouquetOfDay && <CardStock style={{ background: '#FD984F' }}>БУКЕТ ДНЯ</CardStock>}
-          </CardStocks>
-        )}
-        {discount && <CardDiscount>Скидка {discount}%</CardDiscount>}
-      </CardImageBlock>
-      <CardProductName>{name}</CardProductName>
-      <CardBottom>
-        <div>
-          {oldPrice && <CardOldPrice>{oldPrice} сум</CardOldPrice>}
-          <CardCurrentPrice>{price} сум</CardCurrentPrice>
-        </div>
-        <Button style={{ padding: '9px 30px', fontSize: 18 }}>Заказать</Button>
-      </CardBottom>
-    </Card>
-  )
-}
+}) => (
+  <Card>
+    <CardImageBlock>
+      <CardImage src={img} />
+      {(hit || newProduct || bouquetOfDay) && (
+        <CardStocks>
+          {hit && <CardStock style={{ background: '#FD4F79' }}>ХИТ ПРОДАЖ</CardStock>}
+          {newProduct && <CardStock style={{ background: '#4AE950' }}>НОВИНКА</CardStock>}
+          {bouquetOfDay && <CardStock style={{ background: '#FD984F' }}>БУКЕТ ДНЯ</CardStock>}
+        </CardStocks>
+      )}
+      {discount && <CardDiscount>Скидка {discount}%</CardDiscount>}
+    </CardImageBlock>
+    <CardProductName>{name}</CardProductName>
+    <CardBottom>
+      <div>
+        {oldPrice && <CardOldPrice>{oldPrice} сум</CardOldPrice>}
+        <CardCurrentPrice>{price} сум</CardCurrentPrice>
+      </div>
+      <Button style={{ padding: '9px 30px', fontSize: 18 }}>Заказать</Button>
+    </CardBottom>
+  </Card>
+)
 
 export default ProductCard

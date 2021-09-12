@@ -32,17 +32,15 @@ const productInfo = {
   id: '1',
 }
 
-const DiscountProducts = () => {
-  return (
-    <Wrapper>
-      <Container>
-        <Title>Скидки</Title>
-        <Cards>
-          <ProductCard {...productInfo} />
-        </Cards>
-      </Container>
-    </Wrapper>
-  )
-}
+const DiscountProducts = () => (
+  <Wrapper>
+    <Container>
+      <Title>Скидки</Title>
+      <Cards>
+        <ProductCard {...productInfo} />
+      </Cards>
+    </Container>
+  </Wrapper>
+)
 
 export default DiscountProducts

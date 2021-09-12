@@ -1,11 +1,7 @@
 import React from 'react'
 
-function User() {
-  return (
-    <div>
-      User
-    </div>
-  )
-}
+interface Props {}
+
+const User = ({}: Props) => <div>User</div>
 
 export default User

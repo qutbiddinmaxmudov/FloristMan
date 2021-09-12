@@ -7,6 +7,7 @@ interface ButtonInterface {
   href?: string
   style?: CSSProperties
   clickFunc?: () => void
+  type?: 'button' | 'submit'
 }
 
 const StyledButton = styled.button`
@@ -29,18 +30,17 @@ const StyledButton = styled.button`
   }
 `
 
-const Button: React.FC<ButtonInterface> = ({ style, disabled, children, href, clickFunc }) => {
-  return href ? (
+const Button: React.FC<ButtonInterface> = ({ style, disabled, children, href, clickFunc, type }) =>
+  href ? (
     <Link href={href} passHref>
       <StyledButton style={style} as="a">
         {children}
       </StyledButton>
     </Link>
   ) : (
-    <StyledButton onClick={clickFunc} style={style} {...disabled}>
+    <StyledButton type={type} onClick={clickFunc} style={style} {...disabled}>
       {children}
     </StyledButton>
   )
-}
 
 export default Button

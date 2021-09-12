@@ -15,7 +15,6 @@ export const defaultTheme: DefaultTheme = {
   candara: "'Candara', sans-serif",
 }
 
-
 export const GlobalStyles = createGlobalStyle`
   *{
     margin: 0;

@@ -1,11 +1,7 @@
 import React from 'react'
 
-function Cart() {
-  return (
-    <div>
-      Cart
-    </div>
-  )
-}
+interface Props {}
+
+const Cart = ({}: Props) => <div>Cart</div>
 
 export default Cart

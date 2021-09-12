@@ -20,19 +20,17 @@ interface NavbarPanelInterface {
   hidden: boolean
 }
 
-const NavbarPanel: React.FC<NavbarPanelInterface> = ({ hidden }) => {
-  return (
-    <NavbarMenu style={{ transform: `translateX(${hidden ? '-100%' : '0'})` }}>
-      <NavbarMenuItem url="gift">Цветы</NavbarMenuItem>
-      <NavbarMenuItem items={[{ name: 'Рафаэлло', url: 'raffaello' }]}>Сладости</NavbarMenuItem>
-      <NavbarMenuItem url="sweets">Сладости</NavbarMenuItem>
-      <NavbarMenuItem url="balls">Воздушные шарики</NavbarMenuItem>
-      <NavbarMenuItem url="accessories">Аксессуары</NavbarMenuItem>
-      <NavbarMenuItem url="services">Услуги</NavbarMenuItem>
-      <NavbarMenuItem url="fruits-baskets">Фруктовые корзины</NavbarMenuItem>
-      <NavbarMenuItem url="houseplants">Комнатные растения</NavbarMenuItem>
-    </NavbarMenu>
-  )
-}
+const NavbarPanel: React.FC<NavbarPanelInterface> = ({ hidden }) => (
+  <NavbarMenu style={{ transform: `translateX(${hidden ? '-100%' : '0'})` }}>
+    <NavbarMenuItem url="gift">Цветы</NavbarMenuItem>
+    <NavbarMenuItem items={[{ name: 'Рафаэлло', url: 'raffaello' }]}>Сладости</NavbarMenuItem>
+    <NavbarMenuItem url="sweets">Сладости</NavbarMenuItem>
+    <NavbarMenuItem url="balls">Воздушные шарики</NavbarMenuItem>
+    <NavbarMenuItem url="accessories">Аксессуары</NavbarMenuItem>
+    <NavbarMenuItem url="services">Услуги</NavbarMenuItem>
+    <NavbarMenuItem url="fruits-baskets">Фруктовые корзины</NavbarMenuItem>
+    <NavbarMenuItem url="houseplants">Комнатные растения</NavbarMenuItem>
+  </NavbarMenu>
+)
 
 export default NavbarPanel

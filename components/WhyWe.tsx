@@ -69,33 +69,31 @@ const TextBlock3 = styled(TextBlock1)`
   padding: 95px 85px;
 `
 
-const WhyWe = () => {
-  return (
-    <Wrapper>
-      <Container>
-        <Title>Почему именно мы?</Title>
-        <Block>
-          <StyledImage src={img1} alt="Beautiful flowers" />
-          <TextBlock1>
-            Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант. Вы можете выбрать
-            любую цветочную композицию из нашего каталога или заказать свой вариант
-          </TextBlock1>
-        </Block>
-        <Block>
-          <StyledImage src={img2} alt="Beautiful flowers" />
-          <TextBlock2>
-            Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант
-          </TextBlock2>
-        </Block>
-        <Block>
-          <StyledImage src={img3} alt="Beautiful flowers" />
-          <TextBlock3>
-            Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант
-          </TextBlock3>
-        </Block>
-      </Container>
-    </Wrapper>
-  )
-}
+const WhyWe = () => (
+  <Wrapper>
+    <Container>
+      <Title>Почему именно мы?</Title>
+      <Block>
+        <StyledImage src={img1} alt="Beautiful flowers" />
+        <TextBlock1>
+          Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант. Вы можете выбрать
+          любую цветочную композицию из нашего каталога или заказать свой вариант
+        </TextBlock1>
+      </Block>
+      <Block>
+        <StyledImage src={img2} alt="Beautiful flowers" />
+        <TextBlock2>
+          Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант
+        </TextBlock2>
+      </Block>
+      <Block>
+        <StyledImage src={img3} alt="Beautiful flowers" />
+        <TextBlock3>
+          Вы можете выбрать любую цветочную композицию из нашего каталога или заказать свой вариант
+        </TextBlock3>
+      </Block>
+    </Container>
+  </Wrapper>
+)
 
 export default WhyWe

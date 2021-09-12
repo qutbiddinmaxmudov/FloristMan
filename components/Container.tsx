@@ -14,8 +14,8 @@ interface ContainerInterface {
   className?: string
 }
 
-const Container: React.FC<ContainerInterface> = ({ children, className }) => {
-  return <StyledContainer className={className}>{children}</StyledContainer>
-}
+const Container: React.FC<ContainerInterface> = ({ children, className }) => (
+  <StyledContainer className={className}>{children}</StyledContainer>
+)
 
 export default Container

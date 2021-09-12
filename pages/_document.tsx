@@ -1,3 +1,4 @@
+// eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -40,7 +41,7 @@ class AppDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
         <body>
-            <Main />
+          <Main />
           <NextScript />
         </body>
       </Html>

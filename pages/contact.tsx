@@ -1,11 +1,7 @@
 import React from 'react'
 
-function Contact() {
-  return (
-    <div>
-      Contact
-    </div>
-  )
-}
+interface Props {}
+
+const Contact = ({}: Props) => <div>Contact</div>
 
 export default Contact

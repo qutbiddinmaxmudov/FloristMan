@@ -41,6 +41,13 @@ export const Input = styled.input`
     font-family: ${(p) => p.theme.lato};
     color: rgba(0, 0, 0, 0.54);
   }
+
+  ${(p) => `
+    &.error {
+      box-shadow: 0 0 5px ${p.theme.color.red} inset;
+      color: ${p.theme.color.red};
+    }
+  `}
 `
 export const PasswordInput = styled.div`
   display: flex;
@@ -48,6 +55,12 @@ export const PasswordInput = styled.div`
   background: ${(p) => p.theme.color.white};
   align-items: center;
   padding-right: 15px;
+  ${(p) => `
+    &.error {
+      box-shadow: 0 0 5px ${p.theme.color.red} inset;
+      color: ${p.theme.color.red};
+    }
+  `}
 `
 export const ShowPassword = styled.button`
   border: none;

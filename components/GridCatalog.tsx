@@ -49,96 +49,84 @@ const ItemBackground = styled.div`
   z-index: -1;
 `
 
-const GridCatalog = () => {
-  return (
-    <CatalogWrapper>
-      <Container>
-        <Title>Каталог</Title>
-        <Grid>
-          <Link href="/catalog" passHref>
-            <Item>
-              <ItemBackground>
-                <Image layout="fill" objectFit="cover" src={forWho} alt="Букет из белых и красных роз" />
-              </ItemBackground>
-              <PatternBlock size={39} side="top" style={{ height: 95 }}>
-                Для кого
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item style={{ gridRow: 'span 2' }}>
-              <ItemBackground>
-                <Image
-                  layout="fill"
-                  objectFit="cover"
-                  src={presents}
-                  alt="Композиция в коробке из ромашек и клубники"
-                />
-              </ItemBackground>
-              <PatternBlock size={57} side="left" style={{ height: '100%', width: 170, marginLeft: 'auto' }}>
-                Подарки
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item>
-              <ItemBackground>
-                <Image layout="fill" objectFit="cover" src={collections} alt="Букет из белых и красных тюльпанов" />
-              </ItemBackground>
-              <PatternBlock size={39} side="top" style={{ height: 95 }}>
-                Праздничная коллекция
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item style={{ gridRow: 'span 2' }}>
-              <ItemBackground>
-                <Image
-                  layout="fill"
-                  objectFit="cover"
-                  src={bouquets}
-                  alt="Букет из филетовых цветов обернутый в крафт"
-                />
-              </ItemBackground>
-              <PatternBlock size={57} side="right" style={{ height: '100%', width: 170, marginRight: 'auto' }}>
-                Букеты
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item>
-              <ItemBackground>
-                <Image layout="fill" objectFit="cover" src={sweets} alt="Каробка с шоколадом" />
-              </ItemBackground>
-              <PatternBlock size={39} side="top" style={{ height: 95 }}>
-                Сладости
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item>
-              <ItemBackground>
-                <Image layout="fill" objectFit="cover" src={roomFlowers} alt="Фиолетовый цветок в горшке" />
-              </ItemBackground>
-              <PatternBlock size={39} side="top" style={{ height: 95 }}>
-                Комнатные растения
-              </PatternBlock>
-            </Item>
-          </Link>
-          <Link href="/catalog" passHref>
-            <Item style={{ gridRow: 'span 2' }}>
-              <ItemBackground>
-                <Image layout="fill" objectFit="cover" src={roses} alt="Букет из красных роз" />
-              </ItemBackground>
-              <PatternBlock size={57} side="left" style={{ height: '100%', width: 170, marginLeft: 'auto' }}>
-                Розы
-              </PatternBlock>
-            </Item>
-          </Link>
-        </Grid>
-      </Container>
-    </CatalogWrapper>
-  )
-}
+const GridCatalog = () => (
+  <CatalogWrapper>
+    <Container>
+      <Title>Каталог</Title>
+      <Grid>
+        <Link href="/catalog" passHref>
+          <Item>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={forWho} alt="Букет из белых и красных роз" />
+            </ItemBackground>
+            <PatternBlock size={39} side="top" style={{ height: 95 }}>
+              Для кого
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item style={{ gridRow: 'span 2' }}>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={presents} alt="Композиция в коробке из ромашек и клубники" />
+            </ItemBackground>
+            <PatternBlock size={57} side="left" style={{ height: '100%', width: 170, marginLeft: 'auto' }}>
+              Подарки
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={collections} alt="Букет из белых и красных тюльпанов" />
+            </ItemBackground>
+            <PatternBlock size={39} side="top" style={{ height: 95 }}>
+              Праздничная коллекция
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item style={{ gridRow: 'span 2' }}>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={bouquets} alt="Букет из филетовых цветов обернутый в крафт" />
+            </ItemBackground>
+            <PatternBlock size={57} side="right" style={{ height: '100%', width: 170, marginRight: 'auto' }}>
+              Букеты
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={sweets} alt="Каробка с шоколадом" />
+            </ItemBackground>
+            <PatternBlock size={39} side="top" style={{ height: 95 }}>
+              Сладости
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={roomFlowers} alt="Фиолетовый цветок в горшке" />
+            </ItemBackground>
+            <PatternBlock size={39} side="top" style={{ height: 95 }}>
+              Комнатные растения
+            </PatternBlock>
+          </Item>
+        </Link>
+        <Link href="/catalog" passHref>
+          <Item style={{ gridRow: 'span 2' }}>
+            <ItemBackground>
+              <Image layout="fill" objectFit="cover" src={roses} alt="Букет из красных роз" />
+            </ItemBackground>
+            <PatternBlock size={57} side="left" style={{ height: '100%', width: 170, marginLeft: 'auto' }}>
+              Розы
+            </PatternBlock>
+          </Item>
+        </Link>
+      </Grid>
+    </Container>
+  </CatalogWrapper>
+)
 
 export default GridCatalog

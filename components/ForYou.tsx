@@ -53,25 +53,23 @@ const productInfo = {
   id: '1',
 }
 
-const ForYou = () => {
-  return (
-    <Wrapper>
-      <Container>
-        <Title>
-          <ImageWrapper>
-            <Image height="44px" width="44px" src={doublePattern} alt="Красивый узор" />
-          </ImageWrapper>
-          Для Вас
-        </Title>
-        <Cards>
-          <ProductCard {...productInfo} />
-        </Cards>
-        <Link href="/catalog" passHref>
-          <MoveToCatalog>Перейти к каталогу</MoveToCatalog>
-        </Link>
-      </Container>
-    </Wrapper>
-  )
-}
+const ForYou = () => (
+  <Wrapper>
+    <Container>
+      <Title>
+        <ImageWrapper>
+          <Image height="44px" width="44px" src={doublePattern} alt="Красивый узор" />
+        </ImageWrapper>
+        Для Вас
+      </Title>
+      <Cards>
+        <ProductCard {...productInfo} />
+      </Cards>
+      <Link href="/catalog" passHref>
+        <MoveToCatalog>Перейти к каталогу</MoveToCatalog>
+      </Link>
+    </Container>
+  </Wrapper>
+)
 
 export default ForYou
